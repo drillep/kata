@@ -29,22 +29,58 @@ I want to recieve your product
 *background*
 Our business is growing and we now need to print off address information around the world. It has come to the attention of the product that the UK format for address labels is not valid for all countries. 
 
-We want to start shipping to the US, Hong Kong, Italy, Switzerland, France, Germany and Japan
+We want to start shipping to the US, Hong Kong, Italy, Switzerland, France, Germany and Japan.
 
 We already have collected the Address information but require a change to display the correct Address. 
 
-Examples:
+### Examples: (from https://bitboost.com/ref/international-address-formats.html)
 
-Italy
+#### Italy:
 
-US
+CHRIS RUSSO           
+VIA APPIA NUOVA 123/4  
+00184 ROMA RM        
+ITALY
 
-Switzerland
+#### US:
 
-Hong Kong
+CHRIS NISWANDEE
+SMALLSYS INC
+795 E DRAGRAM
+TUCSON AZ 85705
+USA
 
-France
+#### Switzerland:
 
-Germany
+Frau                      
+Wilhemlina Waschbaer
+Hochbaumstrasse 123 A     
+5678 Bern                
+SWITZERLAND 
 
-Japan
+#### Hong Kong:
+
+Mr. CHAN Kwok-kwong
+Flat 25, 12/F, Acacia Building
+150 Kennedy Road
+WAN CHAI
+HONG KONG
+
+#### France:
+
+Madame Duval             Some people prefer to write the recipient's last name in ALL CAPITAL LETTERS, but the UPU does not deem this necessary.
+27 RUE PASTEUR           
+14390 CABOURG            
+FRANCE
+
+#### Germany:
+
+Herrn                       
+Eberhard Wellhausen          
+Wittekindshof             
+Schulstrasse 4            
+32547 Bad Oyenhausen          
+GERMANY
+
+#### Japan:
+
