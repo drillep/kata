@@ -1,0 +1,24 @@
+[
+  {
+    "recipient": "Radio Manchester",
+    "addressLine1": "Quay House",
+    "addressLine2": "BBC MediaCity UK",
+    "addressLine3": "",
+    "addressLine4": "",
+    "locality": "Salford",
+    "region": "",
+    "country": "UK",
+    "postcode": "M50 2QH"
+  },
+  {
+    "recipient": "Bob Smith",
+    "addressLine1": "7 The Avenue",
+    "addressLine2": "",
+    "addressLine3": "",
+    "addressLine4": "",
+    "locality": "Guildford",
+    "region": "Surrey",
+    "country": "UK",
+    "postcode": "GU2 5YH"
+  }
+]
