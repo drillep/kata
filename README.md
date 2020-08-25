@@ -76,7 +76,7 @@ HONG KONG
 
 #### France:
 
-Madame Duval
+Madame Duval  
 27 RUE PASTEUR  
 14390 CABOURG  
 FRANCE
