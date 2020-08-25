@@ -48,7 +48,7 @@ We already have collected the Address information but require a change to displa
 CHRIS RUSSO  
 VIA APPIA NUOVA 123/4  
 00184 ROMA RM  
-ITALY
+ITALY  
 
 #### US:
 
@@ -61,10 +61,10 @@ USA
 #### Switzerland:
 
 Frau  
-Wilhemlina Waschbaer
+Wilhemlina Waschbaer  
 Hochbaumstrasse 123 A  
 5678 Bern  
-SWITZERLAND
+SWITZERLAND  
 
 #### Hong Kong:
 
@@ -72,7 +72,7 @@ Mr. CHAN Kwok-kwong
 Flat 25, 12/F, Acacia Building  
 150 Kennedy Road  
 WAN CHAI  
-HONG KONG
+HONG KONG  
 
 #### France:
 
@@ -87,7 +87,7 @@ Herrn
 Eberhard Wellhausen  
 Wittekindshof  
 Schulstrasse 4  
-32547 Bad Oyenhausen  
+32547 Bad Oyenhausen   
 GERMANY
 
 #### Japan:
