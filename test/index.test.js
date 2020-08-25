@@ -126,9 +126,11 @@ describe('address label printer', () => {
       ];
       const fsReadFileSpy = jest.spyOn(fs, 'readFile');
       fsReadFileSpy.mockImplementation((path, enc, cb) => cb(null, JSON.stringify(fixture)));
+      // eslint-disable-next-line no-console
       console.log = jest.fn();
 
       await run();
+      // eslint-disable-next-line no-console
       const message = console.log.mock.calls[0][0];
       expect(message).toMatchSnapshot();
     });

@@ -32,6 +32,7 @@ const loadAddressData = () => {
 
 const run = async () => {
   const data = await loadAddressData();
+  // eslint-disable-next-line no-console
   console.log(data.map(transformAddress).map(templateAddress).join('\n'));
 };
 
