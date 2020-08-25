@@ -18,7 +18,7 @@ Prints out shipping labels. Nice and simple
 
 - `/data` Contains json with raw address fields
 - `/app` Contains the code that prints out the labels
-- `/test` Contains the ests written in Jest
+- `/test` Contains the tests written in Jest
 
 # Task
 
