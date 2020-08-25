@@ -44,10 +44,10 @@ ITALY
 
 #### US:
 
-CHRIS NISWANDEE
-SMALLSYS INC
-795 E DRAGRAM
-TUCSON AZ 85705
+CHRIS NISWANDEE                     
+SMALLSYS INC                     
+795 E DRAGRAM                     
+TUCSON AZ 85705                     
 USA
 
 #### Switzerland:
@@ -60,10 +60,10 @@ SWITZERLAND
 
 #### Hong Kong:
 
-Mr. CHAN Kwok-kwong
-Flat 25, 12/F, Acacia Building
-150 Kennedy Road
-WAN CHAI
+Mr. CHAN Kwok-kwong                     
+Flat 25, 12/F, Acacia Building                     
+150 Kennedy Road                     
+WAN CHAI                     
 HONG KONG
 
 #### France:
