@@ -1,13 +1,18 @@
 const fs = require('fs');
 const path = require('path');
+const { japaneseAddress, formatBuilder } = require('../components/addressFormat');
 
 const dataFile = path.resolve(__dirname, '../data', 'addresses.json');
 
 const transformAddress = (addressData) => {
-  return Object.keys(addressData).reduce((addressList, item) => {
-    const line = addressData[item];
-    if (line !== '') {
-      addressList.push(line);
+  return addressData.reduce((addressList, item) => {
+    switch (item.country.toLowerCase()) {
+      case 'japan':
+        addressList.push(japaneseAddress(item));
+        break;
+      default:
+        addressList.push(formatBuilder(item));
+        break;
     }
     return addressList;
   }, []);
@@ -15,7 +20,7 @@ const transformAddress = (addressData) => {
 
 const templateAddress = (addressList) => {
   const divider = '+--------\n';
-  return `${divider}${addressList.join('\n')}`;
+  return `${divider}${addressList}`;
 };
 
 const loadAddressData = () => {
@@ -33,7 +38,7 @@ const loadAddressData = () => {
 const run = async () => {
   const data = await loadAddressData();
   // eslint-disable-next-line no-console
-  console.log(data.map(transformAddress).map(templateAddress).join('\n'));
+  console.log(transformAddress(data).map(templateAddress).join('\n'));
 };
 
 if (require.main === module) {
