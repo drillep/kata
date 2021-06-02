@@ -4,50 +4,39 @@ const { transformAddress, templateAddress, loadAddressData, run } = require('../
 describe('address label printer', () => {
   describe('transforming an address', () => {
     it('prints all address fields', () => {
-      const data = {
-        recipient: 'Sam Smith',
-        addressLine1: 'My flat name',
-        addressLine2: 'My Apartment building',
-        addressLine3: 'My complex',
-        addressLine4: 'My Street',
-        locality: 'My Town',
-        region: 'My Region',
-        country: 'UK',
-        postcode: 'MY1 2HR',
-      };
+      const data = [
+        {
+          recipient: 'Sam Smith',
+          addressLine1: 'My flat name',
+          addressLine2: 'My Apartment building',
+          addressLine3: 'My complex',
+          addressLine4: 'My Street',
+          locality: 'My Town',
+          region: 'My Region',
+          country: 'UK',
+          postcode: 'MY1 2HR',
+        },
+      ];
       expect(transformAddress(data)).toEqual([
-        'Sam Smith',
-        'My flat name',
-        'My Apartment building',
-        'My complex',
-        'My Street',
-        'My Town',
-        'My Region',
-        'UK',
-        'MY1 2HR',
+        'Sam Smith\nMy flat name\nMy Apartment building\nMy complex\nMy Street\nMy Town\nMy Region\nMY1 2HR',
       ]);
     });
 
     it('ignores empty lines', () => {
-      const data = {
-        recipient: 'Sam Smith',
-        addressLine1: '7 My Road',
-        addressLine2: '',
-        addressLine3: '',
-        addressLine4: '',
-        locality: 'My Town',
-        region: 'My Region',
-        country: 'UK',
-        postcode: 'MY1 2HR',
-      };
-      expect(transformAddress(data)).toEqual([
-        'Sam Smith',
-        '7 My Road',
-        'My Town',
-        'My Region',
-        'UK',
-        'MY1 2HR',
-      ]);
+      const data = [
+        {
+          recipient: 'Sam Smith',
+          addressLine1: '7 My Road',
+          addressLine2: '',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'My Town',
+          region: 'My Region',
+          country: 'UK',
+          postcode: 'MY1 2HR',
+        },
+      ];
+      expect(transformAddress(data)).toEqual(['Sam Smith\n7 My Road\nMy Town\nMy Region\nMY1 2HR']);
     });
   });
 
@@ -56,8 +45,8 @@ describe('address label printer', () => {
       const addressList = ['one', 'two', 'three'];
       expect(templateAddress(addressList)).toMatch(/\+(-){8}.*/);
     });
-    it('places address list items on new lines', () => {
-      const addressList = ['one', 'two', 'three'];
+    it('places address list items on a new line', () => {
+      const addressList = ['one\ntwo\nthree'];
       expect(templateAddress(addressList)).toMatch('+--------\none\ntwo\nthree');
     });
   });
@@ -122,6 +111,116 @@ describe('address label printer', () => {
           region: 'My Region',
           country: 'UK',
           postcode: 'MY2 3PL',
+        },
+        {
+          recipient: 'Chris Russo',
+          addressLine1: 'VIA APPIA NUOVA 123/4',
+          addressLine2: '',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'ROMA',
+          region: 'RM',
+          country: 'Italy',
+          postcode: '00184',
+        },
+        {
+          recipient: 'recipient',
+          addressLine1: 'subarea ゲ containing symbols, ',
+          addressLine2: 'further subarea number',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'city ward, ',
+          region: 'prefecture name, ',
+          country: 'JAPAN',
+          postcode: 'post code',
+        },
+        {
+          recipient: 'recipient',
+          addressLine1: 'subarea,',
+          addressLine2: 'further subarea number',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'city ward',
+          region: 'prefecture name,',
+          country: 'JAPAN',
+          postcode: 'post code',
+        },
+        {
+          recipient: 'Chris Niswandee',
+          addressLine1: 'SMALLSYS INC',
+          addressLine2: '795 E DRAGRAM',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'TUCSON',
+          region: 'AZ',
+          country: 'USA',
+          postcode: '85705',
+        },
+        {
+          recipient: 'Frau\nWilhemlina Waschbaer',
+          addressLine1: 'Hochbaumstrasse 123 A',
+          addressLine2: '',
+          addressLine3: '',
+          addressLine4: '',
+          locality: '',
+          region: 'Bern',
+          country: 'SWITZERLAND',
+          postcode: '5678',
+        },
+        {
+          recipient: 'Mr. CHAN Kwok-kwong',
+          addressLine1: 'Flat 25, 12/F, Acacia Building',
+          addressLine2: '150 Kennedy Road',
+          addressLine3: '',
+          addressLine4: '',
+          locality: '',
+          region: 'WAN CHAI',
+          country: 'HONG KONG',
+          postcode: '',
+        },
+        {
+          recipient: 'Madame Duval',
+          addressLine1: '27 RUE PASTEUR',
+          addressLine2: '',
+          addressLine3: '',
+          addressLine4: '',
+          locality: '',
+          region: 'CABOURG',
+          country: 'FRANCE',
+          postcode: '14390',
+        },
+        {
+          recipient: 'Herrn\nEberhard Wellhausen',
+          addressLine1: 'Wittekindshof',
+          addressLine2: 'Schulstrasse 4',
+          addressLine3: '',
+          addressLine4: '',
+          locality: '',
+          region: 'Bad Oyenhausen',
+          country: 'GERMANY',
+          postcode: '32547',
+        },
+        {
+          recipient: '麻美  八木田',
+          addressLine1: '東麻布ISビル4F',
+          addressLine2: '東麻布1-8-1',
+          addressLine3: '',
+          addressLine4: '',
+          locality: '港区',
+          region: '東京都',
+          country: 'JAPAN',
+          postcode: '106-0044',
+        },
+        {
+          recipient: 'Yagita Asami',
+          addressLine1: 'Higashi Azabu IS Bldg 4F',
+          addressLine2: 'Higashi Azabu 1-8-1',
+          addressLine3: '',
+          addressLine4: '',
+          locality: 'Minato-ku',
+          region: 'Tokyo',
+          country: 'JAPAN',
+          postcode: '106-0044',
         },
       ];
       const fsReadFileSpy = jest.spyOn(fs, 'readFile');
