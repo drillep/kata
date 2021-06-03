@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`address label printer running the application prints out a list of labels 1`] = `
+exports[`address label printer running the application prints out a list of country specific formatted labels 1`] = `
 "+--------
 Sam Smith
 My flat name
@@ -67,4 +67,15 @@ GERMANY
 Yagita Asami
 Higashi Azabu IS Bldg 4F Higashi Azabu 1-8-1, Minato-ku
 Tokyo 106-0044"
+`;
+
+exports[`address label printer transforming an unsupported country prints address in default format 1`] = `
+"+--------
+Sam Smith
+My flat name
+My Apartment building
+My complex
+My Street
+MY1 2HR My Town My Region
+Russia"
 `;

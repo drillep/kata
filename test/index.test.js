@@ -88,7 +88,7 @@ describe('address label printer', () => {
     afterEach(() => {
       jest.clearAllMocks();
     });
-    it('prints out a list of labels', async () => {
+    it('prints out a list of country specific formatted labels', async () => {
       const fixture = [
         {
           recipient: 'Sam Smith',
@@ -225,6 +225,33 @@ describe('address label printer', () => {
       ];
       const fsReadFileSpy = jest.spyOn(fs, 'readFile');
       fsReadFileSpy.mockImplementation((path, enc, cb) => cb(null, JSON.stringify(fixture)));
+      // eslint-disable-next-line no-console
+      console.log = jest.fn();
+
+      await run();
+      // eslint-disable-next-line no-console
+      const message = console.log.mock.calls[0][0];
+      expect(message).toMatchSnapshot();
+    });
+  });
+
+  describe('transforming an unsupported country', () => {
+    it('prints address in default format', async () => {
+      const data = [
+        {
+          recipient: 'Sam Smith',
+          addressLine1: 'My flat name',
+          addressLine2: 'My Apartment building',
+          addressLine3: 'My complex',
+          addressLine4: 'My Street',
+          locality: 'My Town',
+          region: 'My Region',
+          country: 'Russia',
+          postcode: 'MY1 2HR',
+        },
+      ];
+      const fsReadFileSpy = jest.spyOn(fs, 'readFile');
+      fsReadFileSpy.mockImplementation((path, enc, cb) => cb(null, JSON.stringify(data)));
       // eslint-disable-next-line no-console
       console.log = jest.fn();
 
